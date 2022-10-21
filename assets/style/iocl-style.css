@@ -1,0 +1,73 @@
+#nav a {
+    font-weight: bold;
+    color: #03174f;
+}
+
+#nav a button.btn {
+    font-weight: bold;
+    background-color: #03174f;
+    color: #fff;
+}
+
+#nav a.router-link-exact-active {
+    color: #f37022;
+}
+
+.iocl-blue-bg {
+    background-color: #03174f !important;
+    color: #fff;
+}
+
+.iocl-orange-btn {
+    color: #fff !important;
+    background-color: #f37022 !important;
+    border-color: #f37022 !important;
+}
+
+.iocl-orange-text {
+    color: #f37022;
+}
+
+.iocl-blue-text {
+    color: #03174f;
+}
+
+.iocl-blue-btn-outline {
+    color: #03174f !important;
+    border: 1px solid #03174f !important;
+}
+
+.iocl-blue-border {
+    border-color: #03174f !important;
+}
+
+.fs-75 {
+    font-size: 0.75rem;
+}
+
+.st0 {
+    filter: url(#filterId);
+}
+
+.st1 {
+    fill: #ffffff;
+}
+
+.st4 {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+}
+
+.st5 {
+    fill: #f37022;
+}
+
+.st6 {
+    font-family: "Roboto-Bold";
+}
+
+.st7 {
+    font-size: 24px;
+}

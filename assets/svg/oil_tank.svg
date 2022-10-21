@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg version="1.1" id="DG_250kVA_1" inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)" x="0px" y="0px" viewBox="0 0 320 180" xml:space="preserve" sodipodi:docname="fuel-tanker.svg" width="210" height="125" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+    <defs id="DG_250kVA_2"></defs>
+    <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" id="DG_250kVA_3" inkscape:current-layer="g13" inkscape:cx="41.5" inkscape:cy="152.5" inkscape:document-units="pt" inkscape:pagecheckerboard="0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="1001" inkscape:window-maximized="1" inkscape:window-width="1920" inkscape:window-x="-9" inkscape:window-y="-9" inkscape:zoom="1" pagecolor="#ffffff" showgrid="false">
+    </sodipodi:namedview>
+    <defs id="DG_250kVA_4">
+      <filter id="DG_250kVA_filterId" primitiveUnits="objectBoundingBox" x="-0.0041029792" y="-0.011092992" width="1.008206" height="1.0247414">
+        <feFlood x="0%" y="0%" width="100%" height="100%" flood-color="#03174f" id="DG_250kVA_6"></feFlood>
+        <feOffset dy="0.07999999999999996" id="DG_250kVA_7">
+          <animate attributeName="dy" from="1" to="0.07999999999999996" dur="3s"></animate>
+        </feOffset>
+        <feComposite operator="in" in2="SourceGraphic" id="DG_250kVA_8"></feComposite>
+        <feComposite operator="over" in2="SourceGraphic" id="DG_250kVA_9"></feComposite>
+      </filter>
+    </defs>
+    <g id="DG_250kVA_10">
+      <path class="tanker-tank-color" filter="url(#DG_250kVA_filterId)" d="M 498.24692,226.86334 H 40.953992 c -19.870218,0 -35.849765,-22.1213 -35.849765,-49.20083 V 80.405056 c 0,-27.270227 16.118499,-49.200829 35.849765,-49.200829 H 498.24692 c 19.87021,0 35.84975,22.121303 35.84975,49.200829 v 97.257454 c 0,27.27023 -15.97954,49.20083 -35.84975,49.20083 z" style="fill: #ffffff; fill-opacity: 1; stroke: #03174f; stroke-width: 4.34089; stroke-miterlimit: 4; stroke-dasharray: none; stroke-opacity: 1;" id="DG_250kVA_11" transform="matrix(0.59358856,0,0,0.79752857,1.442579,-8.841446)"></path>
+
+      <rect x="46.02108" y="3.6000004" class="tanker-lid" width="33.597111" height="12.04268" id="DG_250kVA_12" style="stroke-width: 1; stroke:#03174f; fill:#03174f"></rect>
+      <rect x="208.18947" y="3.6000004" class="tanker-lid" width="33.597111" height="12.04268" id="DG_250kVA_13" style="stroke-width: 1; stroke:#03174f; fill:#03174f"></rect>
+      <path d="m 291.62383,15.961692 v 9.53812 h -27.87662 v -9.53812 h -2.72835 V 173.34066 h 2.72835 v -9.53812 h 27.87662 v 9.53812 h 2.72836 V 15.961692 Z m 0,16.307107 V 47.499023 H 263.74721 V 32.268799 Z M 263.74721,113.18897 V 97.95875 h 27.87662 v 15.23022 z m 27.87662,6.76899 v 15.23022 H 263.74721 V 119.95796 Z M 263.74721,91.34362 V 76.113385 h 27.87662 V 91.34362 Z m 0,-21.999228 V 54.26801 h 27.87662 v 15.230223 h -27.87662 z m 0,87.689158 v -15.07638 h 27.87662 v 15.23022 h -27.87662 z" class="tanker-ladder" id="DG_250kVA_14" style="stroke-width: 1.5; stroke: #f37022" fill="#f37022"></path>
+      <text xml:space="preserve" style="
+          font-style: normal;
+          font-weight: normal;
+          font-size: 40px;
+          line-height: 1.25;
+          font-family: sans-serif;
+          fill: #f37022;
+          fill-opacity: 1;
+          stroke: none;
+        " x="106" y="108" id="DG_250kVA_15">
+        <tspan sodipodi:role="line" id="tspan1513" x="0" y="108">
+          92%
+        </tspan>
+      </text>
+    </g>
+  </svg>

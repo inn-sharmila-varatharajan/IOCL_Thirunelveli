@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="MonitoringSystem.view.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>IOCL</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../assets/library/bootstrap_v5.1.3/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/library/font-awesome_v5.15.4/all.min.css" rel="stylesheet" />
+    <link href="../assets/style/iocl-style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="Content_Header" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <header class="p-3">
+        <div class="container-fluid">
+           
+            <nav class="navbar navbar-expand-sm navbar-light" id="nav">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="javascript:void(0)">Smart <span class="iocl-orange-text">Monitor</span></a>
+                <button class="navbar-toggler iocl-orange-text" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                  <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="Dashboard.aspx">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="UserManager.aspx">User Manager</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="Settings.aspx">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="ChangePassword.aspx">Change Password</a>
+                    </li>
+                  </ul>
+                  <form class="d-flex">
+                      <a href="../Login.aspx" class="nav-link col text-end"><span class="iocl-orange-text">Sign Out</span></a>
+                  </form>
+                </div>
+              </div>
+            </nav>
+
+        </div>
+    </header>
+    <asp:ContentPlaceHolder ID="Content_Page" runat="server">
+    </asp:ContentPlaceHolder>
+    <script src="../assets/library/jquery_v3.6.0/jquery-3.6.0.min.js"></script>
+    <script src="../assets/library/bootstrap_v5.1.3/bootstrap.bundle.min.js"></script>
+    <script src="../assets/library/font-awesome_v5.15.4/all.min.js"></script>
+    <asp:ContentPlaceHolder ID="Content_Script" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>
