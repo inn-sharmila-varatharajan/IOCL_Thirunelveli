@@ -37,7 +37,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">Tank Name</th>
-                                <th scope="col">Capasity (KL)</th>
+                                <th scope="col">Level (M)</th>
                                 <th scope="col">Threshold (KL)</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -68,12 +68,12 @@
                             <div class="row mb-3">
                                 <label for="inputCapasity" class="col-sm-3 col-form-label">Capacity</label
                     >
-                    <div class="col-sm-9">
+                    <div class="col-sm-9">  
                       <input
                         type="text"
                         class="form-control"
                         id="inputCapasity"
-                        placeholder="Enter Capasity"
+                        placeholder="Enter Capacity"
                         readonly
                       />
                     </div>
@@ -123,7 +123,7 @@
                       Tank Name
                     </label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputTankName" placeholder="Enter Tank Name" readonly />
+                                    <input type="text" class="form-control" id="watername" placeholder="Enter Tank Name" readonly />
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -133,8 +133,8 @@
                       <input
                         type="text"
                         class="form-control"
-                        id="inputCapasity"
-                        placeholder="Enter Capasity"
+                        id="watercapacity"
+                        placeholder="Enter Capacity"
                         readonly
                       />
                     </div>
@@ -213,7 +213,7 @@
       ];
         let waterList = [
         { name: "Fire Water Tank 1", capacity: "25000", threshold: "5000" },
-        { name: "Fire Water Tank 2", capacity: "50000", threshold: "10000" },
+        { name: "Fire Water Tank 2", capacity: "20000", threshold: "10000" },
         { name: "Fire Water Tank 3", capacity: "20000", threshold: "4000" },
       ];
         function listGenerate() {
@@ -242,19 +242,107 @@
                       <td>${ item.capacity }</td>
                       <td>${ item.threshold }</td>
                       <td>
-                        <i class="fas fa-pencil-alt text-primary" onclick="showHideForm('water_form')"></i>
+                        <i class="fas fa-pencil-alt text-primary" onclick="showHideFormwater('water_form,${item.name}')"></i>
                       </td>
                 </tr>
             `;
             }
             document.getElementById("water_list_tbody").innerHTML = listHTML;
         }
-        function showHideForm(formname){
+        function showHideForm(formname) {
+
+            var str = formname;
+            var str_array = str.split(',');
+            var hh = str_array[0];
+            $("#inputTankName").val(str_array[1]);
+            $("#inputCapasity").val(str_array[2]);
+
             document.getElementById("list_area").classList.toggle("d-none");
-            document.getElementById(formname).classList.toggle("d-none");
+            document.getElementById(str_array[0]).classList.toggle("d-none");
         }
+        function showHideFormwater(formname)
+        {
+            var str = formname;
+            var str_array = str.split(',');
+            var hh = str_array[0];
+            $("#watername").val(str_array[1]);
+            $("#watercapacity").val(str_array[2]);
+
+            document.getElementById("list_area").classList.toggle("d-none");
+            document.getElementById(str_array[0]).classList.toggle("d-none");
+        }
+
         function initSettingManager() {
-          listGenerate();
+            listGenerate();
+            fuelwaterdatas();
+        }
+
+        function fuelwaterdatas() {
+            $.ajax({
+                type: "POST",
+                url: "Settings.aspx/GetEnergyMeterData",
+                data: JSON.stringify({ MeterID: "" }),
+                contentType: "application/json; charset=utf-8",
+            }).done(function (data) {
+                let parseData = JSON.parse(data.d);
+                console.log(parseData)
+                if (parseData) {
+                    fuelMonitoring(parseData["FUEL"]);
+                    waterMonitoring(parseData["WATER"]);
+                } else {
+                    alert("Failed to load data");
+                }
+            });
+        }
+
+        let waterMonitoring = (waterData) => {
+            let waterHTML = '';
+       
+            if (!waterData.length) {
+                return;
+            }
+
+            for (let cnt = 0; cnt < waterData.length; cnt++) {
+                let item = waterData[cnt];
+                waterHTML += `
+                <tr>
+                      <td>${item.tank}</td>
+                      <td>10</td>
+                      <td>${item.distance}</td>
+                      <td>
+                        <i class="fas fa-pencil-alt text-primary" onclick="showHideFormwater('water_form,${item.tank},10')"></i>
+                      </td>
+                </tr>
+            `;
+            }
+            document.getElementById("water_list_tbody").innerHTML = waterHTML;
+
+      
+        }
+
+        let fuelMonitoring = (fuelData) => {
+            let fuelHTML = '';
+
+            if (!fuelData.length) {
+                return;
+            }
+
+            for (let cnt = 0; cnt < fuelData.length; cnt++) {
+                let item = fuelData[cnt];
+                fuelHTML += `
+                <tr>
+                      <td>${item.tank}</td>
+                      <td>100</td>
+                      <td>${item.percentage}</td>
+                      <td>
+                        <i class="fas fa-pencil-alt text-primary" onclick="showHideForm('oil_form,${item.tank},100')"></i>
+                      </td>
+                </tr>
+            `;
+            }
+            document.getElementById("oil_list_tbody").innerHTML = fuelHTML;
+
+
         }
 
         initSettingManager();

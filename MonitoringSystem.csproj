@@ -48,6 +48,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\EncryptAndDecrypt.dll</HintPath>
     </Reference>
+    <Reference Include="M2Mqtt.Net, Version=4.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\M2Mqtt.4.3.0.0\lib\net45\M2Mqtt.Net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -109,11 +112,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\csv.png" />
+    <Content Include="assets\excel.png" />
     <Content Include="assets\library\bootstrap_v5.1.3\bootstrap.bundle.min.js" />
     <Content Include="assets\library\bootstrap_v5.1.3\bootstrap.min.css" />
     <Content Include="assets\library\font-awesome_v5.15.4\all.min.css" />
     <Content Include="assets\library\font-awesome_v5.15.4\all.min.js" />
     <Content Include="assets\library\jquery_v3.6.0\jquery-3.6.0.min.js" />
+    <Content Include="assets\loader.gif" />
+    <Content Include="assets\loader.png" />
+    <Content Include="assets\logo.jpg" />
+    <Content Include="assets\logo1.png" />
+    <Content Include="assets\pdf.png" />
+    <Content Include="assets\script\sample-data.js" />
+    <Content Include="assets\script\svg-template.js" />
     <Content Include="assets\script\w3-includeHTML.js" />
     <Content Include="assets\style\iocl-login.css" />
     <Content Include="assets\style\iocl-style.css" />
@@ -168,10 +180,24 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="view\AnnunciatorReport.aspx" />
     <Content Include="view\ChangePassword.aspx" />
     <Content Include="view\Dashboard.aspx" />
+    <Content Include="view\DG.aspx" />
+    <Content Include="view\DGMileageReport.aspx" />
+    <Content Include="view\Diesel.aspx" />
+    <Content Include="view\Fire.aspx" />
+    <Content Include="view\FirePumpReport.aspx" />
+    <Content Include="view\FlowRate.aspx" />
+    <Content Include="view\Monthly.aspx" />
+    <Content Include="view\OnTime.aspx" />
+    <Content Include="view\Power.aspx" />
+    <Content Include="view\PressureReport.aspx" />
+    <Content Include="view\Report.aspx" />
     <Content Include="view\Settings.aspx" />
     <Content Include="view\UserManager.aspx" />
+    <Content Include="view\Variance.aspx" />
+    <Content Include="view\WaterTankReport.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -193,6 +219,13 @@
     <Compile Include="view\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="view\AnnunciatorReport.aspx.cs">
+      <DependentUpon>AnnunciatorReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\AnnunciatorReport.aspx.designer.cs">
+      <DependentUpon>AnnunciatorReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="view\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -207,6 +240,83 @@
     <Compile Include="view\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="view\DG.aspx.cs">
+      <DependentUpon>DG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\DG.aspx.designer.cs">
+      <DependentUpon>DG.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\DGMileageReport.aspx.cs">
+      <DependentUpon>DGMileageReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\DGMileageReport.aspx.designer.cs">
+      <DependentUpon>DGMileageReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\Diesel.aspx.cs">
+      <DependentUpon>Diesel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\Diesel.aspx.designer.cs">
+      <DependentUpon>Diesel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\Fire.aspx.cs">
+      <DependentUpon>Fire.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\Fire.aspx.designer.cs">
+      <DependentUpon>Fire.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\FirePumpReport.aspx.cs">
+      <DependentUpon>FirePumpReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\FirePumpReport.aspx.designer.cs">
+      <DependentUpon>FirePumpReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\FlowRate.aspx.cs">
+      <DependentUpon>FlowRate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\FlowRate.aspx.designer.cs">
+      <DependentUpon>FlowRate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\Monthly.aspx.cs">
+      <DependentUpon>Monthly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\Monthly.aspx.designer.cs">
+      <DependentUpon>Monthly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\OnTime.aspx.cs">
+      <DependentUpon>OnTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\OnTime.aspx.designer.cs">
+      <DependentUpon>OnTime.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\Power.aspx.cs">
+      <DependentUpon>Power.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\Power.aspx.designer.cs">
+      <DependentUpon>Power.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\PressureReport.aspx.cs">
+      <DependentUpon>PressureReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\PressureReport.aspx.designer.cs">
+      <DependentUpon>PressureReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
     <Compile Include="view\Settings.aspx.cs">
       <DependentUpon>Settings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -220,6 +330,20 @@
     </Compile>
     <Compile Include="view\UserManager.aspx.designer.cs">
       <DependentUpon>UserManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\Variance.aspx.cs">
+      <DependentUpon>Variance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\Variance.aspx.designer.cs">
+      <DependentUpon>Variance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="view\WaterTankReport.aspx.cs">
+      <DependentUpon>WaterTankReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="view\WaterTankReport.aspx.designer.cs">
+      <DependentUpon>WaterTankReport.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

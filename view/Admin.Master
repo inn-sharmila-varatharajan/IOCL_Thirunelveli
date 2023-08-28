@@ -18,7 +18,11 @@
         <div class="container-fluid">
            
             <nav class="navbar navbar-expand-sm navbar-light" id="nav">
+                
+                         <img style="align-items:center;height:100px;" class="mb-4" src="../assets/logo1.png" alt="" /> 
+                           
               <div class="container-fluid">
+                  
                 <a class="navbar-brand" href="javascript:void(0)">Smart <span class="iocl-orange-text">Monitor</span></a>
                 <button class="navbar-toggler iocl-orange-text" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                   <span class="navbar-toggler-icon"></span>
@@ -28,16 +32,28 @@
                     <li class="nav-item">
                       <a class="nav-link" href="Dashboard.aspx">Home</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="UserManager.aspx">User Manager</a>
+                        <li class="nav-item">
+                     
+                            <div class="dropdown">
+                                 <a class="nav-link" href="#">Reports</a>
+  <div class="dropdown-content">
+    <a href="OnTime.aspx">OnTime Report</a>
+    <a href="Variance.aspx">Variance Analysis report</a>
+    <a href="Monthly.aspx">Variance Analysis report - Monthly</a>
+    <a href="Power.aspx">Power Parameters Report</a>
+     <a href="Diesel.aspx">Diesel TopUp Report</a>
+     <a href="DGMileageReport.aspx">DG Mileage Report</a>
+     <a href="WaterTankReport.aspx">FirePump Water-Level Report</a>
+     <a href="FirePumpReport.aspx">Fire Pump performance Report</a>
+     <a href="FlowRate.aspx">Flow Report</a>
+       <a href="PressureReport.aspx">Pressure Report</a>
+       <a href="AnnunciatorReport.aspx">Annunciator Report</a>
+  </div>
+</div>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="Settings.aspx">Settings</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="ChangePassword.aspx">Change Password</a>
-                    </li>
-                  </ul>
+                      
+                      </ul>
+
                   <form class="d-flex">
                       <a href="../Login.aspx" class="nav-link col text-end"><span class="iocl-orange-text">Sign Out</span></a>
                   </form>
@@ -54,5 +70,39 @@
     <script src="../assets/library/font-awesome_v5.15.4/all.min.js"></script>
     <asp:ContentPlaceHolder ID="Content_Script" runat="server">
     </asp:ContentPlaceHolder>
+    <style>
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  color: white;
+  border: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  font-size:smaller;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropdown {background-color: #3e8e41;}
+</style>
+
 </body>
 </html>
